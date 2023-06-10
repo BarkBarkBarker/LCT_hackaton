@@ -1,0 +1,474 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <script src="{% static 'js/script.js'%}"></script>
+</head>
+<body>
+    <div class="wrapper">
+    <a href='https://www.pik.ru/'><img src="{% static 'logo.svg'%}" width="75" height="23" alt="www.pik.ru"></a>
+    <div class="column1">
+        <h1>Выберите тип сантехнического узла:</h1>
+            <form>
+                <label>
+                    <select class="box" id="select">
+                        <option value="select-block-1" selected="selected">Гостевой</option>
+                        <option value="select-block-2">Хозяйский</option>
+                        <option value="select-block-3">Спаренный</option>
+                    </select>
+                </label>
+            </form>
+
+
+    <div id="select-block-1" class="select-blocks" style="display:none">
+        <h1>Введите координаты центра вывода и диаметр:</h1>
+            <form method="post" action="">
+
+                <p>Туалет</p>
+                    <p>
+                          <label for="toilet_d"></label>
+                          <input type="number" name="toilet_d" placeholder="d" id="toilet_d" class="form toilet_d">
+                    </p>
+                    <p>
+                          <label for="toilet_z"></label>
+                          <input type="number" name="toilet_z" placeholder="z" id="toilet_z" class="form toilet_z">
+                    </p>
+                    <p>
+                          <label for="toilet_y"></label>
+                          <input type="number" name="toilet_y" placeholder="y" id="toilet_y" class="form toilet_y">
+                    </p>
+                    <p>
+                        <label for="toilet_x"></label>
+                        <input type="number" name="toilet_x" placeholder="x" id="toilet_x" class="form toilet_x">
+                    </p>
+
+                <p>Раковина</p>
+                    <p>
+                          <label for="sink_d"></label>
+                          <input type="number" name="sink_d" placeholder="d" id="sink_d" class="form sink_d">
+                    </p>
+                    <p>
+                          <label for="sink_z"></label>
+                          <input type="number" name="sink_z" placeholder="z" id="sink_z" class="form sink_z">
+                    </p>
+                    <p>
+                          <label for="sink_y"></label>
+                          <input type="number" name="sink_y" placeholder="y" id="sink_y" class="form sink_y">
+                    </p>
+                    <p>
+                        <label for="sink_x"></label>
+                        <input type="number" name="sink_x" placeholder="x" id="sink_x" class="form sink_x">
+                    </p>
+
+                <p>Стиральная машина</p>
+                    <p>
+                          <label for="washer_d"></label>
+                          <input type="number" name="washer_d" placeholder="d" id="washer_d" class="form washer_d">
+                    </p>
+                    <p>
+                          <label for="washer_z"></label>
+                          <input type="number" name="washer_z" placeholder="z" id="washer_z" class="form washer_z">
+                    </p>
+                    <p>
+                          <label for="washer_y"></label>
+                          <input type="number" name="washer_y" placeholder="y" id="washer_y" class="form washer_y">
+                    </p>
+                    <p>
+                        <label for="washer_x"></label>
+                        <input type="number" name="washer_x" placeholder="x" id="washer_x" class="form washer_x">
+                    </p>
+                <h1>Введите координаты стен, как показано на рисунке</h1>
+
+                <p class="desp">Стена 1&rarr;2</p>
+                    <p>
+                          <label for="wall_y2"></label>
+                          <input type="number" name="wall_y2" placeholder="y2" id="wall_y2" class="form wall_y2">
+                    </p>
+                    <p>
+                          <label for="wall_x2"></label>
+                          <input type="number" name="wall_x2" placeholder="x2" id="wall_x2" class="form wall_x2">
+                    </p>
+                    <p>
+                        <label for="wall_y1"></label>
+                        <input type="number" name="wall_y1" placeholder="y1" id="wall_y1" class="form wall_y1">
+                    </p>
+                    <p>
+                          <label for="wall_x1"></label>
+                          <input type="number" name="wall_x1" placeholder="x1" id="wall_x1" class="form wall_x1">
+                    </p>
+
+                <p class="desp">Стена 3&rarr;4</p>
+                    <p>
+                          <label for="wall_y4"></label>
+                          <input type="number" name="wall_y4" placeholder="y4" id="wall_y4" class="form wall_y4">
+                    </p>
+                    <p>
+                          <label for="wall_x4"></label>
+                          <input type="number" name="wall_x4" placeholder="x4" id="wall_x4" class="form wall_x4">
+                    </p>
+                    <p>
+                        <label for="wall_y3"></label>
+                        <input type="number" name="wall_y3" placeholder="y3" id="wall_y3" class="form wall_y3">
+                    </p>
+                    <p>
+                          <label for="wall_x3"></label>
+                          <input type="number" name="wall_x3" placeholder="x3" id="wall_x3" class="form wall_x3">
+                    </p>
+
+                <p class="desp">Стена 5&rarr;6</p>
+                    <p>
+                          <label for="wall_y6"></label>
+                          <input type="number" name="wall_y6" placeholder="y6" id="wall_y6" class="form wall_y6">
+                    </p>
+                    <p>
+                          <label for="wall_x6"></label>
+                          <input type="number" name="wall_x6" placeholder="x6" id="wall_x6" class="form wall_x6">
+                    </p>
+                    <p>
+                        <label for="wall_y5"></label>
+                        <input type="number" name="wall_y5" placeholder="y5" id="wall_y5" class="form wall_y5">
+                    </p>
+                    <p>
+                          <label for="wall_x5"></label>
+                          <input type="number" name="wall_x5" placeholder="x5" id="wall_x5" class="form wall_x5">
+                    </p>
+                <h1>Введите толщину стен, как показано на рисунке</h1>
+        <p>
+                          <label for="wall_d23"></label>
+                          <input type="number" name="wall_d23" placeholder="D23" id="wall_d23" class="form wall_d2">
+                    </p>
+                    <p>
+                          <label for="wall_d34"></label>
+                          <input type="number" name="wall_d34" placeholder="D34" id="wall_d34" class="form wall_d3">
+                    </p>
+                    <p>
+                        <label for="wall_d45"></label>
+                        <input type="number" name="wall_d45" placeholder="D45" id="wall_d45" class="form wall_d4">
+                    </p>
+                    <p>
+                          <label for="wall_d52"></label>
+                          <input type="number" name="wall_d52" placeholder="D52" id="wall_d52" class="form wall_d5">
+                    </p>
+                <div><img src="{% static 'FAQ.png'%}" width="358px" alt="FAQ"></div>
+
+            </form>
+    </div>
+
+   <div id="select-block-2" class="select-blocks" style="display:none">
+       <h1>Введите координаты центра вывода и диаметр:</h1>
+       <form method="post" action="">
+                <p>Туалет</p>
+                    <p>
+                          <label for="toilet_d"></label>
+                          <input type="number" name="toilet_d" placeholder="d" id="toilet_d" class="form toilet_d">
+                    </p>
+                    <p>
+                          <label for="toilet_z"></label>
+                          <input type="number" name="toilet_z" placeholder="z" id="toilet_z" class="form toilet_z">
+                    </p>
+                    <p>
+                          <label for="toilet_y"></label>
+                          <input type="number" name="toilet_y" placeholder="y" id="toilet_y" class="form toilet_y">
+                    </p>
+                    <p>
+                        <label for="toilet_x"></label>
+                        <input type="number" name="toilet_x" placeholder="x" id="toilet_x" class="form toilet_x">
+                    </p>
+
+
+                <p >Раковина</p>
+                    <p>
+                          <label for="sink_d"></label>
+                          <input type="number" name="sink_d" placeholder="d" id="sink_d" class="form sink_d">
+                    </p>
+                    <p>
+                          <label for="sink_z"></label>
+                          <input type="number" name="sink_z" placeholder="z" id="sink_z" class="form sink_z">
+                    </p>
+                    <p>
+                          <label for="sink_y"></label>
+                          <input type="number" name="sink_y" placeholder="y" id="sink_y" class="form sink_y">
+                    </p>
+                    <p>
+                        <label for="sink_x"></label>
+                        <input type="number" name="sink_x" placeholder="x" id="sink_x" class="form sink_x">
+                    </p>
+
+                    <p>Вторая раковина</p>
+                    <p>
+                          <label for="sink2_d"></label>
+                          <input type="number" name="sink2_d" placeholder="d" id="sink2_d" class="form sink2_d">
+                    </p>
+                    <p>
+                          <label for="sink2_z"></label>
+                          <input type="number" name="sink2_z" placeholder="z" id="sink2_z" class="form sink2_z">
+                    </p>
+                    <p>
+                          <label for="sink2_y"></label>
+                          <input type="number" name="sink2_y" placeholder="y" id="sink2_y" class="form sink2_y">
+                    </p>
+                    <p>
+                        <label for="sink2_x"></label>
+                        <input type="number" name="sink2_x" placeholder="x" id="sink2_x" class="form sink2_x">
+                    </p>
+
+                <p>Стиральная машина</p>
+                    <p>
+                          <label for="washer_d"></label>
+                          <input type="number" name="washer_d" placeholder="d" id="washer_d" class="form washer_d">
+                    </p>
+                    <p>
+                          <label for="washer_z"></label>
+                          <input type="number" name="washer_z" placeholder="z" id="washer_z" class="form washer_z">
+                    </p>
+                    <p>
+                          <label for="washer_y"></label>
+                          <input type="number" name="washer_y" placeholder="y" id="washer_y" class="form washer_y">
+                    </p>
+                    <p>
+                        <label for="washer_x"></label>
+                        <input type="number" name="washer_x" placeholder="x" id="washer_x" class="form washer_x">
+                    </p>
+
+                    <p>Ванна/Душевая кабина</p>
+                    <p>
+                          <label for="bath_d"></label>
+                          <input type="number" name="bath_d" placeholder="d" id="bath_d" class="form bath_d">
+                    </p>
+                    <p>
+                          <label for="bath_z"></label>
+                          <input type="number" name="bath_z" placeholder="z" id="bath_z" class="form bath_z">
+                    </p>
+                    <p>
+                          <label for="bath_y"></label>
+                          <input type="number" name="bath_y" placeholder="y" id="bath_y" class="form bath_y">
+                    </p>
+                    <p>
+                        <label for="bath_x"></label>
+                        <input type="number" name="bath_x" placeholder="x" id="bath_x" class="form bath_x">
+                    </p>
+       </form>
+   </div>
+
+   <div id="select-block-3" class="select-blocks" style="display:none">
+       <h1>Введите координаты центра вывода и диаметр:</h1>
+       <form method="post" action="">
+                <p>Туалет</p>
+                    <p>
+                          <label for="toilet_d"></label>
+                          <input type="number" name="toilet_d" placeholder="d" id="toilet_d" class="form toilet_d">
+                    </p>
+                    <p>
+                          <label for="toilet_z"></label>
+                          <input type="number" name="toilet_z" placeholder="z" id="toilet_z" class="form toilet_z">
+                    </p>
+                    <p>
+                          <label for="toilet_y"></label>
+                          <input type="number" name="toilet_y" placeholder="y" id="toilet_y" class="form toilet_y">
+                    </p>
+                    <p>
+                        <label for="toilet_x"></label>
+                        <input type="number" name="toilet_x" placeholder="x" id="toilet_x" class="form toilet_x">
+                    </p>
+
+
+                <p >Раковина</p>
+                    <p>
+                          <label for="sink_d"></label>
+                          <input type="number" name="sink_d" placeholder="d" id="sink_d" class="form sink_d">
+                    </p>
+                    <p>
+                          <label for="sink_z"></label>
+                          <input type="number" name="sink_z" placeholder="z" id="sink_z" class="form sink_z">
+                    </p>
+                    <p>
+                          <label for="sink_y"></label>
+                          <input type="number" name="sink_y" placeholder="y" id="sink_y" class="form sink_y">
+                    </p>
+                    <p>
+                        <label for="sink_x"></label>
+                        <input type="number" name="sink_x" placeholder="x" id="sink_x" class="form sink_x">
+                    </p>
+
+                <p>Стиральная машина</p>
+                    <p>
+                          <label for="washer_d"></label>
+                          <input type="number" name="washer_d" placeholder="d" id="washer_d" class="form washer_d">
+                    </p>
+                    <p>
+                          <label for="washer_z"></label>
+                          <input type="number" name="washer_z" placeholder="z" id="washer_z" class="form washer_z">
+                    </p>
+                    <p>
+                          <label for="washer_y"></label>
+                          <input type="number" name="washer_y" placeholder="y" id="washer_y" class="form washer_y">
+                    </p>
+                    <p>
+                        <label for="washer_x"></label>
+                        <input type="number" name="washer_x" placeholder="x" id="washer_x" class="form washer_x">
+                    </p>
+
+                    <p>Ванна/Душевая кабина</p>
+                    <p>
+                          <label for="bath_d"></label>
+                          <input type="number" name="bath_d" placeholder="d" id="bath_d" class="form bath_d">
+                    </p>
+                    <p>
+                          <label for="bath_z"></label>
+                          <input type="number" name="bath_z" placeholder="z" id="bath_z" class="form bath_z">
+                    </p>
+                    <p>
+                          <label for="bath_y"></label>
+                          <input type="number" name="bath_y" placeholder="y" id="bath_y" class="form bath_y">
+                    </p>
+                    <p>
+                        <label for="bath_x"></label>
+                        <input type="number" name="bath_x" placeholder="x" id="bath_x" class="form bath_x">
+                    </p>
+       </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    $(function() {
+        $("#" + $("#select option:selected").val()).show();
+        $("#select").change(function(){
+            $(".select-blocks").hide();
+            $("#" + $(this).val()).show();
+        });
+    });
+</script>
+        <script>
+            function collect(){
+                let pu = [];
+                for (let typ of ["toilet", "bath", "sink", "washer", "sink2"]){
+                    var elements = document.getElementsByClassName(typ + "_d");
+                    var d="",
+                        x="",
+                        y="",
+                        z="";
+                    for (item of elements){
+                        if(item.value !== ""){
+                            d = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName(typ + "_x");
+                    for (item of elements){
+                        if(item.value !== ""){
+                            x = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName(typ + "_y");
+                    for (item of elements){
+                        if(item.value !== ""){
+                            y = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName(typ + "_z");
+                    for (item of elements){
+                        if(item.value !== ""){
+                            z = item.value;
+                            break;
+                        }
+                    }
+                    if (!(d==="") && !(x==="") && !(y==="") && !(z==="")){
+                        pu.push([x,y,z,d])
+                    }
+                }
+                let walls = []
+                for (let i = 2; i<5; i++){
+                    var x1 ="",
+                        x2 ="",
+                        y1 ="",
+                        y2 ="",
+                        d = "";
+                    var elements = document.getElementsByClassName("wall_x" + i);
+                    for (item of elements){
+                        if(item.value !== ""){
+                            x1 = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName("wall_x" + (i+1));
+                    for (item of elements){
+                        if(item.value !== ""){
+                            x2 = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName("wall_y" + i);
+                    for (item of elements){
+                        if(item.value !== ""){
+                            y1 = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName("wall_y" + (i+1));
+                    for (item of elements){
+                        if(item.value !== ""){
+                            y2 = item.value;
+                            break;
+                        }
+                    }
+                    var elements = document.getElementsByClassName("wall_d" + i);
+                    for (item of elements){
+                        if(item.value !== ""){
+                            d = item.value;
+                            break;
+                        }
+                    }
+                    if (!(x1==="") && !(x2==="") && !(y1==="") && !(y2==="") && !(d==="")){
+                        walls.push([x1,x2,y1,y2,d,1]);
+                    }
+                }
+                const file = {
+                    "PU": pu,
+                    "walls": walls,
+                }
+                const fileJson = JSON.stringify(file);
+                var textFile = "text.txt";
+                makeTextFile = function (text) {
+                    var data = new Blob([text], {type: 'text/plain'});
+
+                    // If we are replacing a previously generated file we need to
+                    // manually revoke the object URL to avoid memory leaks.
+                    if (textFile !== null) {
+                      window.URL.revokeObjectURL(textFile);
+                    }
+
+                    textFile = window.URL.createObjectURL(data);
+
+                    // returns a URL you can use as a href
+                    return textFile;
+                  };
+
+                makeTextFile(fileJson)
+
+
+
+            }
+
+
+        </script>
+
+
+    <form>
+        <button type='button' onclick="collect()" class="button" name="calculate">Рассчитать</button>
+    </form>
+
+    </div>
+        <div class="column2">
+            <p>Визуализация</p>
+            <output class="visualization"></output>
+        </div>
+    </div>
+
+</body>
+</html>

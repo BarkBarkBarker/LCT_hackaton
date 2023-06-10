@@ -1,0 +1,119 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <script src="{% static 'js/script.js'%}"></script>
+</head>
+<body>
+    <div class="wrapper">
+    <a href='https://www.pik.ru/'><img src="{% static 'logo.svg'%}" width="75" height="23" alt="www.pik.ru"></a>
+    <div class="column1">
+            <h1>Выберите тип сантехнического узла:</h1>
+            <form>
+                <label>
+                    <select class="box" id="select">
+                        <option value="select-block-1" selected="selected">Гостевой</option>
+                        <option value="select-block-2">Хозяйский</option>
+                        <option value="select-block-3">Спаренный</option>
+                    </select>
+                </label>
+            </form>
+
+
+            <div id="select-block-1" class="select-blocks" style="display:none">
+                <h1>Введите координаты центра вывода и диаметр:</h1>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <p>Туалет</p>
+                            {{ form1 }}
+
+                        <p>Раковина</p>
+                            {{ form2 }}
+
+                        <p>Стиральная машина</p>
+                            {{ form3 }}
+                        <h1>Введите координаты стен, как показано на рисунке</h1>
+
+                        <p class="desp">Стена 1&rarr;2</p>
+                            {{ form4 }}
+
+                        <p class="desp">Стена 3&rarr;4</p>
+                            {{ form5 }}
+
+                        <p class="desp">Стена 5&rarr;6</p>
+                            {{ form6 }}
+                        <h1>Введите толщину стен, как показано на рисунке</h1>
+                            {{ form7 }}
+                        <div><img src="{% static 'FAQ.jpg'%}" width="358px" alt="FAQ"></div>
+                        <button type='submit' class="button" name="calculate" value="upvote">Рассчитать</button>
+                    </form>
+            </div>
+
+           <div id="select-block-2" class="select-blocks" style="display:none">
+               <h1>Введите координаты центра вывода и диаметр:</h1>
+               <form method="post" action="">
+                   {% csrf_token %}
+                        {{ form8 }}
+               </form>
+           </div>
+
+           <div id="select-block-3" class="select-blocks" style="display:none">
+               <h1>Введите координаты центра вывода и диаметр:</h1>
+               <form method="post" action="">
+                   {% csrf_token %}
+                        {{ form9 }}
+                </form>
+             </div>
+
+    </div>
+        <div class="column2">
+            <h1>Визуализация</h1>
+            <output class="visualization">
+                {{ graph|safe }}
+
+                <div id="enable_check" class="enable">
+                    <form method="post" id="formbutton">
+                        {% csrf_token %}
+
+                        <div class="d-flex justify-content-center">
+                            <button name="but2" class="form" onclick="downscale()" style="margin-left: 25%; margin-top: 22px;" type="button" id="but2">&larr;</button>
+                            <input name="GetMe" id="getme" value="0" class="form" style="margin-top: 20px;"/>
+                            <button name="but3" class="form" onclick="upscale()" style="margin-top: 22px;" type="button" id="but3">&rarr;</button>
+                        </div>
+
+                        <button name="but1" type="submit" class="button" style="margin-left: 16%;margin-top: 10px" id="but1">Повернуть</button>
+                    </form>
+
+                </div>
+
+            </output>
+
+        </div>
+    </div>
+<script>
+    function downscale(){
+
+        document.getElementById('getme').value = (parseFloat(document.getElementById('getme').value) - 10)%360
+    }
+    function upscale(){
+        document.getElementById('getme').value = (parseFloat(document.getElementById('getme').value) + 10)%360
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    $(function() {
+        $("#" + $("#select option:selected").val()).show();
+        $("#select").change(function(){
+            $(".select-blocks").hide();
+            $("#" + $(this).val()).show();
+        });
+    });
+</script>
+
+</body>
+</html>

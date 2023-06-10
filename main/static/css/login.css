@@ -1,0 +1,30 @@
+.authorization {
+    margin-left: 35%;
+    margin-top: 200px;
+    font-family: Graphik, Helvetica, Arial,sans-serif;
+    font-size: 16px;
+}
+
+
+.authorization .form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 385px;
+    height: 54px;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #959595;
+    text-align: center;
+}
+
+.button {
+    color:white;
+    font-weight:bold;
+    margin: 20px 0 20px 0;
+    width: 385px;
+    height: 54px;
+    background-color: #FC4C02;
+    border: 0;
+    border-radius: 30px;
+}
